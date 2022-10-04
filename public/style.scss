@@ -1,0 +1,455 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap');
+
+
+$red: #ff0552;
+
+
+*{
+    font-family: "Open Sans", sans-serif;
+    padding: 0;margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+*::selection{
+    background: $red;
+    color: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0;
+    padding: 1.2rem 2rem;
+    z-index: 1000;
+
+    .logo{
+        font-size: 3rem;
+        color: #fff;
+        margin-right: auto;
+
+        i{
+            padding: 0 .5rem;
+            color: $red;
+        }
+    }
+
+    form{
+        display: none;
+        margin-right: auto;
+        display: flex;
+
+        #search{
+            height: 4rem;
+            width: 40rem;
+            padding: 0 1rem;
+            font-size: 1.7rem;
+            color: #333;
+            border: none;        
+        }
+
+        label{
+            height: 4rem;
+            width: 5rem;
+            line-height: 4rem !important;
+            text-align: center;
+            font-size: 1.7rem;
+            background: #333;
+            color: #fff;
+            cursor: pointer;
+
+            &:hover{
+                background: $red;
+            }
+        }
+    }
+
+    .navbar{
+        ul{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+
+            li{
+                margin: 0 1rem;
+
+                a{
+                    color: #fff;
+                    font-size: 2rem;
+
+                    &:hover{
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+
+    .upload{
+        margin-left: 2rem;
+        font-size: 2rem;
+        background: $red;
+        color: #fff;
+        border-radius: 5rem;
+        padding: .5rem 2.5rem;
+
+        &:hover{
+            background: #fff;
+            color: #333;
+        }
+    }
+
+    #menu{
+        font-size: 3rem;
+        color: #fff;
+        cursor: pointer;
+        display: none;
+    }
+
+    
+}
+
+header.header-active{
+    background: #111;
+
+    form{
+        display: flex;
+    }
+}
+
+.home{
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url("./images/bg1.jpeg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 2rem;
+
+    h1{
+        font-size: 6rem;
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 .1rem .3rem #000;
+    }
+
+        form{
+            display: flex;
+            align-items: center;
+            height: 5rem;
+            width: 80rem;
+            border-radius: 5rem;
+            background: #fff;
+            margin: 2rem 0;
+
+            #search{
+                width: 100%;
+                height: 100%;
+                border: none;
+                background: none;
+                padding: 0 2rem;
+                font-size: 2rem;
+                color: #333;
+            }
+
+            label{
+                font-size: 2.5rem;
+                margin: 0 2rem;
+                cursor: pointer;
+                color: #666;
+
+                &:hover{
+                    color: $red;
+                }
+            }
+        }
+    
+
+    .suggestion {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        flex-wrap: wrap;
+        li{
+            color: #eee;
+            margin: .2rem .5rem;
+            font-size: 2rem;
+
+            a{
+                color: #ccc;
+
+                &:hover{
+                    color: $red;
+                }
+            }
+        }
+    }
+}
+
+.gallery{
+    column-count: 3;
+    padding: 4rem 10%;
+
+    .box{
+        padding: 1rem;
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        img{
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .info{
+            position: absolute;
+            bottom: -100%; left: 0;
+            width: 100%;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+
+            .fa-download{
+                margin: 2rem;
+                padding: 1rem 2rem;
+                font-size: 2rem;
+                color: #333;
+                background: #fff;
+                box-shadow: 0 .1rem .2rem rgba(0,0,0,.3);
+
+                &:hover{
+                    background: $red;
+                    color: #fff;
+                }
+            }
+
+            .links{
+                padding-right: 1rem;
+
+                a{
+                    font-size: 2rem;
+                    text-shadow: 0 .1rem .1rem #000;
+                    margin: 3rem 1rem;
+                    color: #fff;
+
+                    &:hover{
+                        color: $red;
+                    }
+                }
+            }
+        }
+
+        &:hover{
+            .info{
+                bottom: 0;
+            }
+        }
+    }
+
+    
+}
+// footer section
+
+.footer{
+    background-color: #eee;
+
+    .box-container{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .box:nth-child(2){
+            text-align: center;
+        }
+
+        .box{
+            margin: 2rem;
+            flex: 1 1 30rem;
+
+            h3{
+                color: $red;
+                font-size: 2.5rem;
+            }
+
+            p{
+                color: #333;
+                font-size: 1.5rem;
+                padding: 1rem 0;
+            }
+
+            a{
+                display: block;
+                font-size: 1.8rem;
+                padding: .5rem 0;
+                color: #333;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            form{
+                display: flex;
+                width: 100%;
+
+                input{
+                    height: 4rem;
+                    width: 100%;
+                    padding: 0 1rem;
+                    font-size: 1.7rem;
+                    color: #333;
+                    border: none;
+                }
+
+                button{
+                    height: 4rem;
+                    width: 6rem;
+                    line-height: 4rem;
+                    text-align: center;
+                    font-size: 1.7rem;
+                    color: #fff;
+                    border: none;
+                    background: $red;
+                    cursor: pointer;
+
+                    &:hover{
+                        background: #333;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .credit{
+        text-align: center;
+        padding: 2rem 1rem;
+        background: #ccc;
+        font-size: 2rem;
+
+        a{
+            color: $red;
+        }
+    }
+}
+
+
+
+
+@media (max-width:991px) {
+    html{
+        font-size: 55%;
+    }
+    
+    header{
+        form{
+            display: block;
+            #search{
+                width: 100%;
+            }
+        }
+    }
+
+    .gallery{
+        column-count: 2;
+    }
+}
+
+@media (max-width:768px) {
+    html{
+        font-size: 52%;
+    }    
+
+    header {
+        
+        #menu{
+            display: block;
+        }
+
+        .navbar{
+            position: fixed;
+            top: 6rem; right: -120%;
+            height: 100vh;
+            background: #fff;
+            width: 35rem;
+
+            ul{
+                padding-top: 4rem;
+                flex-flow: column;
+
+                li{
+                    width: 100%;
+                    text-align: center;
+                    margin: 1rem 0;
+
+                    a{
+                        font-size: 2.5rem;
+                        color: #333;
+                    }
+                }
+            }
+        }
+
+        .nav-toggle{
+            right: 0%;
+        }
+    }
+
+    .fa-times{
+        transform: rotate(180deg);
+    }
+
+    .home{
+        form{
+            width: 100%;
+        }
+    }
+
+    .gallery{
+        column-count: 1;
+    }
+}
+
+
+@media (max-width:500px) {
+    header {
+        form{
+            display: none !important;
+        }
+
+        #menu{
+            order: 1;
+        }
+
+        .navbar{
+            width: 100vw;
+        }
+        .upload{
+            margin-right: 2rem;
+        }
+    }    
+
+    .home{
+        h1{
+            font-size: 4rem;
+        }
+    }
+
+    .gallery{
+        padding: 2rem 1rem;
+    }
+}
